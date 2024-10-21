@@ -9,6 +9,11 @@
 
 ## AFL++ installation via Docker
 
+To pull the docker image (remember you only need that once) run:
+```shell
+docker pull aflplusplus/aflplusplus
+```
+
 To run a single afl-fuzz thread within a docker container, cd into the repository and run:
 ```shell
 docker run --name afl -ti -v ${PWD}:/src aflplusplus/aflplusplus
