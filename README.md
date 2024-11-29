@@ -19,7 +19,7 @@ To run a single afl-fuzz thread within a docker container, cd into the repositor
 docker run --name afl -ti -v ${PWD}:/src aflplusplus/aflplusplus
 cd /src
 make CC=../AFLplusplus/afl-clang-fast CXX=../AFLplusplus/afl-clang-fast++ LD=../AFLplusplus/afl-clang-fast
-afl-fuzz -i ./testcases -o ./afl_output -M main -- ./svg2ass @@ ./output.tga
+afl-fuzz -i ./testcases -o ./afl_output -M main -- ./svg2ass @@ ./output
 ```
 
 
