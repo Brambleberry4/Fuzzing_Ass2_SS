@@ -22,4 +22,15 @@ make CC=../AFLplusplus/afl-clang-fast CXX=../AFLplusplus/afl-clang-fast++ LD=../
 afl-fuzz -i ./testcases -o ./afl_output -M main -- ./svg2ass @@ ./output
 ```
 
+To run a single afl-fuzz thread with address or memory sanitizer, cd into the repository and run:
+```shell
+AFL_USE_ASAN=1 make CC=../AFLplusplus/afl-clang-fast CXX=../AFLplusplus/afl-clang-fast++ LD=../AFLplusplus/afl-clang-fast
+afl-fuzz -i ./testcases -o ./afl_output_ASan -S ASan -- ./svg2ass @@ ./output
+```
+Or:
+```shell
+AFL_USE_MSAN=1 make CC=../AFLplusplus/afl-clang-fast CXX=../AFLplusplus/afl-clang-fast++ LD=../AFLplusplus/afl-clang-fast
+afl-fuzz -i ./testcases -o ./afl_output_ASan -S MSan -- ./svg2ass @@ ./output
+```
+
 
